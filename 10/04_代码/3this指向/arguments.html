@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var student = {
+				name:"小明",
+				like:function(a,b,c,d){
+					console.log(this)
+					console.log(this.name)
+					console.log(this.name+"喜欢打篮球")
+					
+					//console.log(arguments)
+					console.log(arguments.callee)
+					if(arguments[0]){
+						arguments[0] = 100
+					}
+					
+					console.log(arguments)
+					console.log(a)
+				}
+			}
+		</script>
+	</body>
+</html>

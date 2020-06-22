@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d1">
+			helloworld
+		</div>
+		<img id="img1">
+		<script type="text/javascript">
+			var d1 = document.querySelector("#d1");
+			console.log([d1])
+			//获取属性值
+			console.log(d1.id)
+			console.log(d1['id'])
+			console.log(d1.getAttribute('id'))
+			//设置属性值
+			d1.id = "d2"
+			d1['id'] = "d3"
+			//setAttribute("属性名称"，"属性值")
+			d1.setAttribute("id","d4")
+			
+			
+			var img = document.querySelector('#img1')
+			img.setAttribute("src","img/cxk.jpg")
+			
+			
+			//d1.abc = "789";//默认元素中如果没有此属性,那么此属性只会创建在对象中,不会显示在元素的html上
+			d1.setAttribute("abc","789")///默认元素中如果没有此属性,那么此属性不会创建在对象的属性中,会显示在html的属性中.
+			console.log(d1)
+			console.log([d1])
+			
+			//删除子元素
+			d1.removeAttribute("abc")
+		</script>
+	</body>
+</html>

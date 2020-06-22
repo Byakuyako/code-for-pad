@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/alert.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button type="button">是否跳转至百度页面</button>
+		
+		
+		<script type="text/javascript">
+			var button = document.querySelector("button")
+			button.onclick = function(){
+				lcAlert({
+					title:"严重警告！",
+					content:"是否需要跳转至坑人的百度",
+					// confirmFn:function(){
+					// 	//location.href设置当前页面的地址为百度地址
+					// 	location.href = "http://www.baidu.com"
+					// },
+					cancelFn:function(){
+						var h1 = document.createElement('h1')
+						h1.innerHTML = "用户已取消跳转至百度";
+						document.body.appendChild(h1)
+					}
+				})
+			}
+		</script>
+	</body>
+</html>

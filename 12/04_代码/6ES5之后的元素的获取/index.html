@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<h1>helloworld1</h1>
+		<h1>helloworld2</h1>
+		<h1 id="abc">helloworld3</h1>
+		<h1 class="cba">helloworld4</h1>
+		<h1 class="cba">helloworld5</h1>
+		<div id="d1">
+			<h1 class="cc">helloworld6</h1>
+		</div>
+		<script type="text/javascript">
+			//document.querySelector返回最先匹配到的第一个对象
+			var cba = document.querySelector('.cba')
+			console.log(cba)
+			
+			var abc = document.querySelector("#abc")
+			console.log(abc)
+			
+			var abc1 = document.getElementById("abc")
+			//通过document.querySelector和document.getElementById获取到的对象是同样的
+			console.log(abc===abc1)
+			
+			var a6 = document.querySelector('#d1>.cc')
+			console.log(a6)
+			//document.querySelectorAll获取所有匹配到的元素对象
+			var cbas = document.querySelectorAll('.cba')
+			console.log(cbas)
+			
+			cbas.forEach(function(item,i,arr){
+				item.style.background = "skyblue"
+			})
+		</script>
+	</body>
+</html>

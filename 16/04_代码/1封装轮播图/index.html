@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+		
+	</head>
+	<body>
+		<!-- .swiper>((.imgList>.imgItem*5)+(.btnList>.btn*2)) -->
+		<!-- <div class="swiper">
+			<div class="imgList">
+				<div class="imgItem active" style="background-image: url(img/img1.webp);"></div>
+				<div class="imgItem" style="background-image: url(img/img2.jpg);"></div>
+				<div class="imgItem" style="background-image: url(img/img3.webp);"></div>
+				<div class="imgItem" style="background-image: url(img/img4.webp);"></div>
+				<div class="imgItem" style="background-image: url(img/img5.webp);"></div>
+			</div>
+			<div class="btnList">
+				<div class="btn pre"><</div>
+				<div class="btn next">></div>
+			</div>
+			<div class="circleList">
+				<div id="c0" class="circleItem active"></div>
+				<div id="c1" class="circleItem"></div>
+				<div id="c2" class="circleItem"></div>
+				<div id="c3" class="circleItem"></div>
+				<div id="c4" class="circleItem"></div>
+			</div>
+		</div> -->
+		
+		
+		<div class="swiper1"></div>
+		<!-- 
+		swiper(轮播图生成的位置，图片列表) 
+		使得在具体的某个位置上生成轮播图
+		-->
+		<script type="text/javascript">
+			var imgList = ["img/img1.webp","img/img2.jpg","img/img3.webp","img/img4.webp","img/img5.webp"]
+			var swiper1 = swiper(".swiper1",imgList)
+		</script>
+		
+		
+		<script type="text/javascript">
+			var preBtn = document.querySelector(".swiper .pre")
+			var nextBtn = document.querySelector(".swiper .next")
+			var imgListDivs = document.querySelectorAll(".swiper .imgItem") 
+			var circleDivs = document.querySelectorAll(".swiper .circleItem")
+			var currentImg = 0;
+			
+			console.log(imgListDivs)
+			nextBtn.onclick = function(){
+				currentImg  = currentImg + 1;
+				if(currentImg>=imgListDivs.length){
+					currentImg = 0;
+				}
+				renderNumImg()
+				
+			}
+			
+			preBtn.onclick = function(){
+				currentImg  = currentImg - 1;
+				if(currentImg<0){
+					currentImg = imgListDivs.length-1;
+				}
+				renderNumImg()
+			}
+			
+			
+			function renderNumImg(){
+				//初始化,将所有的img列表的active去掉
+				imgListDivs.forEach(function(item,i){
+					item.classList.remove("active")
+				})
+				circleDivs.forEach(function(item,i){
+					item.classList.remove("active")
+				})
+				
+				
+				imgListDivs[currentImg].classList.add('active') 
+				circleDivs[currentImg].classList.add('active')
+			}
+			
+			/* circleDivs.forEach(function(item,i){
+				item.onclick = function(){
+					//var index =parseInt(item.id[1]) 
+					//currentImg = index;
+					currentImg = i;
+					renderNumImg()
+				}
+			}) */
+			
+			
+			for(var i = 0;i<circleDivs.length;i++){
+				circleDivs[i].onclick = (function(index){
+					/* var index =parseInt(this.id[1])
+					currentImg = index; */
+					return function(){
+						currentImg = index;
+						renderNumImg()
+					}
+				})(i)
+			}
+			
+			
+		</script>
+	</body>
+</html>

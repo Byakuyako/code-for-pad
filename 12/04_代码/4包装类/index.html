@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = "123"
+			var b = str;
+			var str1 = new String('123')
+			var a  = str1;
+			str1.name = "a"
+			str = "456"
+			console.log(str)
+			console.log(str1)
+			console.log(a)
+			console.log(b)
+			
+			var c = new Boolean(true)//内存地址1
+			var d = new Boolean(true)//内存地址2
+			console.log(c===d)
+			
+			
+			var num = new Number(1234565)
+			console.log(num)
+		</script>
+	</body>
+</html>

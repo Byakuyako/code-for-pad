@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--
+		 侧边栏是主要内容的一半
+		 广告栏固定是200px
+		 
+		 弹性布局剩余空间分布设置
+		 -->
+		<style type="text/css">
+			body{
+				display: flex;
+			}
+			
+			/* 剩余空间分布设置
+			 flex:1;占据1分
+			 
+			 */
+			.left{
+				background: #87CEEB;
+				/* width: 200px; */
+				flex: 1;
+			}
+			.main{
+				background: #DA70D6;
+				flex: 2;
+			}
+			.ad{
+				width: 200px;
+				background: #FFA500;
+			}
+		</style>
+	</head>
+	<body>
+		
+		 
+		 <div class="left">
+			 <h1>侧边栏</h1>
+		 </div>
+		 <div class="main">
+			 <h1>主要内容</h1>
+		 </div>
+		 <div class="ad">
+			 <h1>有您的世界在哪里？</h1>
+		 </div>
+	</body>
+</html>

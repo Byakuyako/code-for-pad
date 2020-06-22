@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.parent{
+				width: 800px;
+				/* 1/设定父元素高度 */
+				/* height: 200px; */
+				margin: 0 auto;
+				background: lightcyan;
+				
+			}
+			.child{
+				display: inline-block;
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+				float: left;
+			}
+			/* .clear{
+				clear: both;
+			} */
+			.clear:after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent clear">
+			<div class="child"></div>
+			<div class="child"></div>
+			<div class="child"></div>
+			<!-- <div class="clear"></div> -->
+		</div>
+		<div class="parent clear">
+			<div class="child"></div>
+			<div class="child"></div>
+			<div class="child"></div>
+			<!-- <div class="clear"></div> -->
+		</div>
+		<h1>helloworld</h1>
+	</body>
+</html>

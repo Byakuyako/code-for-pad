@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		 lcEvent.addEvent('事件名称',事件执行函数)
+		 //自定义事件
+		 lcEvent.addEvent('addBuyCar',fn1)//发送用户消息，添加购物车成功
+		 lcEvent.addEvent('addBuyCar',fn2)//购物车栏目里，都商品数量加1
+		 lcEvent.addEvent('addBuyCar',fn3)//往后台发送购物车添加了新数量
+		 
+		 //自定义触发
+		 lcEvent.emit('addBuyCar')//触发购物车事件，事件里的所有函数在此时执行
+		 
+		 -->
+		 <button type="button">按钮</button>
+		 
+		 <script type="text/javascript">
+		 	var lcEvent = {
+				event:{
+					//"addBuyCar":[fn1,fn2,fn3]
+					"青年杂志2019发布":[
+						function(){
+							console.log("购买青年杂志")
+						},
+						function(){
+							console.log("批发青年杂志")
+						}
+					],
+					"click":[
+						function(){
+							document.body.style.background = "purple"
+						}
+					]
+				},
+				addEvent:function(eventName,fn){
+					if(this.event[eventName]==undefined){
+						this.event[eventName] = [];
+					}
+					this.event[eventName].push(fn)
+				},
+				emit:function(eventName,eventMsg){
+					var fnList = this.event[eventName]
+					fnList.forEach(function(item,i){
+						item(eventMsg)
+					})
+				},
+				removeEvent:function(eventName,fn){
+					var fnList = this.event[eventName]
+					var that = this
+					fnList.forEach(function(item,i){
+						if(fn==item){
+							//console.log(this)
+							that.event[eventName].splice(i,1);
+						}
+					})
+				}
+			}
+			
+			var btn = document.querySelector("button")
+			/* btn.addEventListener("click",function(){
+				//lcEvent.emit("click")
+				document.body.style.background = "purple"
+			}) */
+			
+			console.log([btn])
+			
+			btn.__proto__.addEvent=function(eventName,fn){
+					if(this.event==undefined){
+						this.event = {};
+					}
+					if(this.event[eventName]==undefined){
+						this.event[eventName] = [];
+						this.addEventListener(eventName,function(event){
+							this.emit(eventName,event)//触发所有点击事件的执行
+						})
+					}
+					this.event[eventName].push(fn)
+			}
+			btn.__proto__.emit=function(eventName,eventMsg){
+					var fnList = this.event[eventName]
+					fnList.forEach(function(item,i){
+						item(eventMsg)
+					})
+			}
+			
+			
+			
+			
+			btn.addEvent('click',function(event){
+				console.log(event)
+				document.body.style.background = "purple"
+			})
+			//btn.emit('click')
+			
+			
+		 </script>
+		
+	</body>
+</html>

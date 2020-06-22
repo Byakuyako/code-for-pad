@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>按钮</button>
+		<script type="text/javascript">
+			var btn = document.querySelector("button")
+			btn.onclick = function(){
+				var h1 = document.createElement("h1")
+				h1.innerHTML = "helloworld"
+				document.body.appendChild(h1)
+				
+			}
+			
+			
+			/* btn.onclick = function(){
+				document.body.style.backgroundColor = "skyblue"
+			} */
+			
+			var fn = function(){
+				document.body.style.backgroundColor = "skyblue"
+			}
+			btn.addEventListener("click",fn)
+			
+			
+			btn.addEventListener("click",function(){
+				var div = document.createElement("div")
+				div.innerHTML = '这是1个div'
+				document.body.appendChild(div)
+			})
+		</script>
+	</body>
+</html>

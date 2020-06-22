@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var student = new Object()
+			student.name = "小明"
+			student.age = 16
+			
+			
+			var teacher = {
+				name : "老王",
+				age:35,
+				s1:student
+			}
+			
+			student.t1 = teacher
+			console.log(teacher)
+			console.log(student)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div class="d1">hello1</div>
+		<div class="d2">hello2</div>
+		
+		
+		<div class="d3">hello3</div>
+		<div class="d4">hello4</div>
+		<div class="d5">hello5</div>
+		
+		<script type="text/javascript">
+			//1创建元素
+			var h1 =  document.createElement("h3")
+			console.log([h1])
+			console.log(typeof h1)
+			//2设置元素
+			h1.innerHTML = "中午吃啥？"
+			//3插入元素,首页要找到被插入的元素
+			var d1 = document.querySelector(".d1");
+			//4追加子元素
+			d1.appendChild(h1)
+			
+			//在什么前面插入元素
+			//创建img元素
+			var img = document.createElement('img')
+			//设置img的src属性
+			img.src = "img/cxk.jpg"
+			console.log(img)
+			//找到被插入的父元素,<body>
+			var body =  document.querySelector('body')	
+			//在body的d3前插入内容
+			var d3 = document.querySelector('.d3')
+			body.insertBefore(img,d3)
+			//d3.parentElement.insertBefore(img,d3)
+			
+			//删除元素
+			//1找到被删除的父元素
+			var body = document.querySelector('body')
+			//2找到要删除的元素
+			var d2 = document.querySelector('.d2')
+			//3删除,父元素.removeChild(子元素)
+			body.removeChild(d2)
+			//d2.parentElement.removeChild(d2)
+			
+			var img2 = img.cloneNode()
+			//将图追加到d5
+			var d5 = document.querySelector('.d5')
+			d5.appendChild(img2)
+		</script>
+		
+	</body>
+</html>

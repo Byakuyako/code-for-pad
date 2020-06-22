@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//间隔函数
+			var fn1 = function(){
+				var time = new Date()
+				//console.log(time)
+				document.body.innerHTML = time
+			}
+			var intervalId = setInterval(fn1,1000)
+			
+			
+			
+			setTimeout(function() {
+				//取消间隔函数clearInterval(间隔函数ID)
+				clearInterval(intervalId)
+			}, 3000);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body>h1{
+	text-align: center;
+	padding: 10px 0px;
+}
+
+.proList{
+	width: 375px;
+	height: 224px;
+	position: relative;
+	border-top: 1px solid #ccc;
+}
+.proList .proItem:nth-child(1){
+	width: 50%;
+	height: 224px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 15px;
+	border-right: 1px solid #ccc;
+}
+.proList .proItem:nth-child(2){
+	width: 50%;
+	height: 112px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-bottom: 1px solid #ccc;
+	padding: 15px;
+}
+.proList .proItem:nth-child(3){
+	width: 50%;
+	height: 112px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 15px;
+}
+.proList .proItem h3{
+	font-size: 12px;
+	font-weight: normal;
+	color: #666d71;
+}
+.proList .proItem p{
+	font-size: 11px;
+	font-weight: normal;
+	color: #e45050;
+	padding: 5px 0px;
+}
+.proList .proItem:nth-child(1) img{
+	width: 100px;
+	display: block;
+	margin: 0 auto;
+}
+.proList .proItem:nth-child(2) img{
+	
+	width: 64px;
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+}
+.proList .proItem:nth-child(3) img{
+	width: 64px;
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+}

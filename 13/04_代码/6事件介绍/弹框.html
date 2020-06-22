@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<!-- 
+		.zhezhao>.alert>((.header>(span.title{温馨提示}+span.close{x}))+.main+(.btnList>.btn*2))
+		 -->
+		<!-- 
+		<div class="zhezhao">
+			<div class="alert">
+				<div class="header"><span class="title">温馨提示</span><span class="close">x</span></div>
+				<div class="main">
+					【第三方产品责任】除小米之外的其他第三方卖家通过小米平台销售商品、提供服务或软件，小米仅为第三方卖家提供网络平台服务，另外，小米提供连接到关联公司和其他企业网站的链接。小米会尽量进行审核和筛查，但小米对于第三方卖家仅提供互联网平台或推广服务，相应的产品、服务责任由该产品、服务的提供者向用户承担。
+				</div>
+				<div class="btnList">
+					<div class="btn">确定</div>
+					<div class="btn">取消</div>
+				</div>
+			</div>
+		</div>		
+		 -->
+		
+		<button type="button">是否在页面添加1个蓝色的div</button>
+		<script type="text/javascript">
+			var btn = document.querySelector("button");
+			btn.onclick = function(){
+				var zhezhao = document.createElement('div')
+				zhezhao.className = "zhezhao";
+				zhezhao.innerHTML = `
+				<div class="alert">
+					<div class="header"><span class="title">温馨提示</span><span class="close">x</span></div>
+					<div class="main">
+						是否在页面添加1个蓝色的div？
+					</div>
+					<div class="btnList">
+						<div class="btn">确定</div>
+						<div class="btn">取消</div>
+					</div>
+				</div>
+				`
+				var body = document.querySelector('body');
+				body.appendChild(zhezhao)
+				
+				//获取close元素
+				var closeDiv = document.querySelector(".close")
+				closeDiv.onclick = function(){
+					body.removeChild(zhezhao);
+				}
+			}
+		</script>
+	</body>
+</html>

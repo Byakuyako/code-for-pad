@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//存放数据
+			localStorage.newsTitle = "跻身前40！中国营商环境全球排名再度提升"
+			localStorage['author'] = "今日头条"
+			localStorage.setItem("content","习近平指出，中国秉持创新、协调、绿色、开放、共享的发展理念，推动中国经济高质量发展，全面深入落实2030年可持续发展议程。同时，中国积极深化南南合作，推动共建“一带一路”同2030年可持续发展议程深入对接，为全球实现可持续发展目标作出积极贡献。希望各方积极寻求落实2030年可持续发展议程的良策，促进共同发展，携手构建人类命运共同体。")
+			//取数据
+			document.write("<h1>"+localStorage.newsTitle+"</h1>")
+			document.write("<h2>"+localStorage['author']+"</h2>")
+			document.write("<p>"+localStorage.getItem("content")+"</p>")
+			console.log(localStorage.newsTitle)
+			//清除数据
+			//清除1条数据
+			localStorage.removeItem("author")
+			
+			//清除所有数据
+			localStorage.clear()
+			
+			console.log(localStorage)
+		</script>
+	</body>
+</html>

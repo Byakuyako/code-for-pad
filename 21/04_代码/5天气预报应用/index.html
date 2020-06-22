@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="text" placeholder="请输入查找的城市" id="search">
+		<div class="main">
+			
+		</div>
+		<script src="js/getAjax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var inputDom = document.querySelector("#search")
+			var mainDom = document.querySelector(".main")
+			
+			inputDom.onkeydown = function(e){
+				if(e.key == "Enter"){
+					var cityName = inputDom.value;
+					console.log(cityName)
+					var httpUrl = "https://free-api.heweather.net/s6/weather/now?location="+cityName+"&key=3c497450d8e44c5280421ceaba1db581"
+					getAjax(httpUrl,function(res){
+						//console.log(res)
+						var obj  = JSON.parse(res.response)
+						//console.log(obj)
+						var now = obj.HeWeather6[0].now
+						console.log(now)
+						mainDom.innerHTML = `
+							<img src="https://cdn.heweather.com/cond_icon/${now.cond_code}.png" >
+							<h1>温度：${now.tmp}</h1>
+							<h3>体表温度：${now.fl}</h3>
+							<h3>风向：${now.wind_dir}</h3>
+							<h3>风力：${now.wind_sc}</h3>
+						`
+						
+					})
+				}
+			}
+			//把这个应用写的好看,酷炫.
+			//搜索历史:将最近搜索过的10个城市显示在div.history里,这10个城市可以被点击,然后显示相对应的天气情况.历史记录即使关闭浏览器之后在打开依然可用.
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=375,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var hotModel = yidianzuData.data.hotModel;
+			console.log(hotModel)
+			
+			var newArr = hotModel.sort(function(a,b){
+				if(parseFloat(a.minRent) >parseFloat(b.minRent)){
+					return -1
+				}else{
+					return 1
+				}
+			})
+			console.log(newArr)
+			
+			for(var k=0;k<newArr.length;k++){
+				document.write("<div class='proHot'>")
+				document.write("<h3>"+newArr[k].title+"</h3>")
+				document.write("<p>"+newArr[k].minRent+"￥</p>")
+				document.write("<img src='"+newArr[k].url+"'>")
+				document.write("</div>")
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var student = {
+				name:"小王",
+				like:function(){
+					console.log(this)
+					console.log(this.name+"喜欢打篮球！")
+					for(var i = 0;i<arguments.length;i++){
+						console.log(this.name+"喜欢"+arguments[i])
+					}
+				}
+			}
+			var teacher = {
+				name:"老王",
+			}
+			var fn = student.like
+			
+			//student.like()
+			window.fn() //this--->window
+			//fn.call(teacher)
+			fn.apply(teacher)
+		</script>
+	</body>
+</html>

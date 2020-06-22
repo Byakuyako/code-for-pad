@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			/* parent元素为弹性容器 */
+			.parent{
+				width: 800px;
+				height: 800px;
+				border: 1px solid #ccc;
+				margin:  0 auto;
+				/* 设置为弹性容器 */
+				display: flex;
+				/* 设置主轴方向 
+				row:从左到右
+				column:从上到下
+				row-reverse:从右到左
+				column-reverse:从下到上
+				*/
+				flex-direction:column;
+				/* 
+				 设置主轴的内容分布
+				 flex-start:向主轴的开始位置靠拢（默认）
+				 center:向主轴的中心位置靠拢
+				 flex-end:向主轴的结束位置靠拢
+				 space-around:平均分布，两边有间距，两边间距是中间的一半
+				 space-between:平均分布，两边没有间距
+				 space-evenly:(新)平均分布，两边有边距，两边的边距跟中间是一样的
+				 */
+				justify-content: space-evenly;
+				/* 
+				 设置侧轴的内容分布
+				 flex-start:向侧轴的开始位置靠拢
+				 center:向侧轴的中心位置靠拢
+				 flex-end:向侧轴的结束位置靠拢
+				 stretch:拉伸（默认），如果设置高度，此拉伸无效
+				 */
+				align-items: center;
+			}
+			/* child元素为弹性子元素 */
+			.child{
+				width: 200px;
+				height: 200px;
+
+			}
+			.c1{
+				background: skyblue;
+			}
+			.c2{
+				background: orange;
+			}
+			.c3{
+				background: orchid;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="child c1">
+				1
+			</div>
+			<div class="child c2">
+				2
+			</div>
+			<div class="child c3">
+				3
+			</div>
+		</div>
+	</body>
+</html>

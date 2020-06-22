@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>helloworld1</h1>
+		<h1>helloworld2</h1>
+		<h1 id="abc">helloworld3</h1>
+		<h1 class="cba">helloworld4</h1>
+		<h1 class="cba">helloworld5</h1>
+		<script type="text/javascript">
+			//2009 发布的ECMASCRIPT的标准
+			//通过标签名称获取多个元素
+			var h1s = document.getElementsByTagName('h1')
+			console.log(h1s)
+			
+			var newArr = Array.from(h1s)
+			console.log(newArr)
+			
+			h1s.__proto__.__proto__ = Array.prototype;
+			console.log(h1s)
+			
+			//通过ID名称获取元素
+			var abc = document.getElementById("abc")
+			console.log(abc)
+			
+			//通过属性class获取多个元素
+			var cba = document.getElementsByClassName("cba")
+			console.log(cba)
+		</script>
+	</body>
+</html>

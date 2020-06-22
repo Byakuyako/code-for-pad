@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//var a = "123"
+			var b = "小明"
+			
+			
+			function abc(){
+				//如果在赋值操作时,没有声明变量,那么就会自动声明成全局变量并且进行赋值.
+				c = "蔡徐坤"
+				console.log(a)
+			}
+			//console.log(a)
+			//abc()
+			
+			console.log(window);
+			//window
+			//console.log(c)
+			
+			
+			
+			
+			
+			
+			
+			(function(){
+				var a = 3;//不会创建全局作用域
+			})();
+			
+			
+			console.log(a)
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				display: flex;
+				height: 100vh;
+			}
+			.left{
+				width: 200px;
+				background: skyblue;
+			}
+			.right{
+				flex: 1;
+				background: oldlace;
+			}
+			.right iframe{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="left">
+			<h1>导航列表</h1>
+			
+			<h3><button data-index = "1">国内新闻</button></h3>
+			<h3><button data-index = "2">国外新闻</button></h3>
+			<h3><button data-index = "3">娱乐新闻</button></h3>
+			<h3><button data-index = "4">体育新闻</button></h3>
+			
+			
+			<h2><button class="links" type="button" data-src="http://www.taobao.com">淘宝</button></h2>
+		</div>
+		
+		<div class="right">
+			<iframe src="http://www.taobao.com" name="abc" ></iframe>
+			
+			
+			
+		</div>
+		
+		<script type="text/javascript">
+			var btns = document.querySelectorAll("h3 button");
+			var iframe = document.querySelector("iframe")
+			btns.forEach(function(item,index){
+				item.onclick = function(event){
+					iframe.setAttribute("src","news"+(index+1)+".html")
+				}
+			})
+			
+			var linkBtn = document.querySelector('.links');
+			linkBtn.onclick = function(event){
+				console.log(linkBtn)
+				console.log(event)
+				var httpUrl = event.target.dataset.src
+				iframe.setAttribute("src",httpUrl)
+			}
+			
+			iframe.onload = function(){
+				console.log(document.querySelectorAll("h1"))
+				
+				console.log([iframe])
+				//console.log(iframe.contentDocument.querySelector("h1"))
+				//iframe.contentDocument.querySelector("h1").style.background = "purple"
+			}
+			
+		</script>
+	</body>
+</html>

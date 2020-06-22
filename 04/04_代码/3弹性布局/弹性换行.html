@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			/* parent元素为弹性容器 */
+			.parent{
+				width: 800px;
+				height: 800px;
+				border: 1px solid #ccc;
+				margin:  0 auto;
+				/* 设置为弹性容器 */
+				display: flex;
+				flex-direction:row;
+				justify-content: space-evenly;
+				align-items: center;
+				/* 设置换行 flex-wrap
+				nowrap:不换行默认值
+				wrap
+				*/
+				flex-wrap: wrap;
+				/* 设置侧轴多行的分布align-content
+				flex-start 多行内容往侧轴的开端靠拢
+				flex-end 多行内容往侧轴结束端靠拢
+				center 多行内容居中
+				space-betwenn:平均分布，两边没有间距
+				space-around:平均分布，两边有间距，两边间距是中间的一半
+				space-evenly:平均分布，所有的间距一致
+				*/
+				align-content:space-evenly ;
+				 
+			}
+			/* child元素为弹性子元素 */
+			.child{
+				width: 200px;
+				height: 200px;
+
+			}
+			.c1{
+				background: skyblue;
+			}
+			.c2{
+				background: orange;
+			}
+			.c3{
+				background: orchid;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="child c1">
+				1
+			</div>
+			<div class="child c2">
+				2
+			</div>
+			<div class="child c3">
+				3
+			</div>
+			<div class="child c1">
+				1
+			</div>
+			<div class="child c2">
+				2
+			</div>
+			<div class="child c3">
+				3
+			</div>
+			<div class="child c1">
+				1
+			</div>
+			<div class="child c2">
+				2
+			</div>
+			<div class="child c3">
+				3
+			</div>
+			<div class="child c1">
+				1
+			</div>
+			<div class="child c2">
+				2
+			</div>
+			<div class="child c3">
+				3
+			</div>
+		</div>
+	</body>
+</html>

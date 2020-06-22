@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var a = "123";
+			var b = 123
+			console.log(a==b)
+			//==,在JavaScript中会进行隐式的类型转换,如果转换后内容可以相等,那么就为true
+		
+			console.log(a===b)
+			//===,不会进行隐式的类型转换,如果相等即相等,不相等即不相等
+			
+			
+			console.log(a!=b) //false,进行类型转换后比较,结果是==的取反
+			console.log(a!==b) //true,不进行类型的转换,结果是===的取反
+		</script>
+	</body>
+</html>

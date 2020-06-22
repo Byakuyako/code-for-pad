@@ -1,0 +1,16 @@
+#d3{
+	color: saddlebrown;
+	font-size: 100px;
+}
+#d1{
+	color: purple;
+	font-size: 50px;
+}
+body #d1{
+	color: mediumpurple;
+	font-size: 250px;
+}
+div#d1{
+	color:darkslategray;
+	font-size: 350px;
+}

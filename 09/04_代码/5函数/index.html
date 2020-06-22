@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			// var sum = 0;
+			// for(var n=0;n<=100;n++){
+			// 	sum = sum + n
+			// }
+			// console.log(sum)
+			
+			/* function addN(n){
+				var sum = 0;
+				for(var i=0;i<=n;i++){
+					sum = sum + i
+				}
+				console.log(sum)
+			} */
+			
+			//addN(1000)
+			
+			
+			var addN = function(n){
+				var sum = 0;
+				for(var i=0;i<=n;i++){
+					sum = sum + i
+				}
+				console.log(sum)
+			};
+			//匿名函数
+			//addN(50)
+			
+			(function(){
+				console.log("这是1个没有名字的函数")
+			})()
+			
+			
+			/* !function(){
+				console.log("这是1个没有名字的函数")
+			}() */
+			
+			function add(a,b){//形参
+				console.log(a)
+				console.log(b)
+				return a+b
+			}
+			
+			//add(3,4)//实参
+			
+			
+			add("3","4")//"34"
+			add()//可以不传值
+			add(1,2,3,4,5,6,7)//3
+		</script>
+	</body>
+</html>

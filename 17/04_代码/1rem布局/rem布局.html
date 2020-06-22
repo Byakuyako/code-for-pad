@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#d1{
+				width: 5rem;
+				height: 5rem;
+				background: skyblue;
+				font-size: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+		 1/设计师设计网站的设计稿：1000px --- 750px
+		 2/每个人打开网页时候，因为设备不同，或者浏览器设定的分辨率不同，使得需要在不同的分辨率下打开
+		 3/屏幕的大小，1000px, 1rem == 100px（设计稿的宽度）,10rem就会刚刚好占满整个屏幕的宽度
+		 4/屏幕的大小，500px, 1rem就会50px,10rem也是刚刚好就可以占据屏幕的宽度
+		 
+		 -->
+		 <div id="d1">
+		 	helloworld
+		 </div>
+		 <script type="text/javascript">
+			 
+			 window.onresize = function(){
+				 setRem()
+			 }
+			 
+			 function setRem(){
+				 var screenWidth = window.innerWidth;
+				 var danwei = screenWidth/7.5;//屏幕的宽度/设计稿占满全屏的宽度为多少rem
+				 var html = document.querySelector("html")
+				 html.style.fontSize = danwei + 'px';
+			 }
+		 	
+			setRem()
+		 </script>
+	</body>
+</html>

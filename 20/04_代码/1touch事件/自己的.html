@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			body{
+				width: 100vw;
+				height: 100vh;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			var body = document.querySelector("body")
+			
+			//触摸开始事件
+			body.ontouchstart = function(e){
+				console.log(e)
+				console.log("触摸开始事件")
+			}
+			
+			//触摸移动事件
+			body.ontouchmove = function(e){
+				console.log(e)
+				console.log("触摸移动事件")
+			}
+			
+			//触摸结束事件
+			body.ontouchend = function(e){
+				console.log(e)
+				console.log("触摸结束事件")
+			}
+			
+			//触摸点击事件
+			body.onclick = function(e){
+				console.log(e)
+				console.log("触摸点击事件")
+			}
+			
+			//定义一个自定义事件
+			//设置四个自定义的方向绑定事件
+			//xiangLfet：向左
+			//xiangRight：向右
+			//xiangTop：向上
+			//xiangBottom：向下
+			//滑动事件中必然包含一个触摸移动事件
+			//body.addEvent("自定义的事件名",事件触发执行的函数)
+			//事件触发方法：body.emit("事件名称"，传入此次触发事件的信息 )
+			
+			var wyf = {
+				eventAll:{
+					//"自定义事件名称":['事件要触发执行的函数1','事件要触发执行的函数2','事件要触发执行的函数3']
+				},
+				addEvent:function(eventName,hanshu){
+					if(this.eventAll[eventName] == undefined){
+						this.eventAll[eventName] = []
+					}
+					this.eventAll[eventName].push(hanshu)
+				},
+				emit:function(eventName,xinxi){
+					
+				}
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

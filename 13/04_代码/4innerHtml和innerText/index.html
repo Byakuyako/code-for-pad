@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div class="d1">
+			helloworld1
+			<h3>child1</h3>
+			<h3>child2</h3>
+			<h3>child3</h3>
+		</div>
+		<div class="d2">helloworld2</div>
+		<div class="d3">helloworld3</div>
+		<script type="text/javascript">
+			var d1 = document.querySelector('.d1');
+			//获取d1内部的html代码
+			console.log(d1.innerHTML)
+			//获取d1内部的文本内容
+			console.log(d1.innerText)
+			//获取包含d1的HTML代码
+			console.log(d1.outerHTML)
+			
+			
+			
+			var child4 = document.createElement("h3")
+			child4.innerHTML = "child4"
+			d1.appendChild(child4)
+			
+			
+			console.log([d1])
+			console.log(d1.innerHTML)
+			
+			d1.innerHTML = "<img src='img/cxk.jpg'>"
+		</script>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#icon{
+				width: 100px;
+				height: 100px;
+				background-size: 100% 100%;
+				
+			}
+			.iphone #icon{
+				background-image: url(img/iphone.png);
+			}
+			.ipad #icon{
+				background-image: url(img/iPad.png);
+			}
+			.android #icon{
+				background-image: url(img/Android.png);
+			}
+			.pc #icon{
+				background-image: url(img/pc.png);
+			}
+			
+			.lt640 #icon{
+				width: 400px;
+				height: 400px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="icon">
+			
+		</div>
+		<script type="text/javascript">
+			function lcXys(){
+				var html = document.querySelector('html')
+				var userAgent = navigator.userAgent
+				//userAgent.indexOf("iPhone"),通过此方法可以获取iphone在字符中的索引值
+				html.className = "";
+				if(userAgent.indexOf("iPhone")!=-1){
+					//console.log(iphone)
+					html.classList.add("iphone")
+				}else if(userAgent.indexOf("Android")!=-1){
+					//console.log(iphone)
+					html.classList.add("android")
+				}else if(userAgent.indexOf("iPad")!=-1){
+					//console.log(iphone)
+					html.classList.add("ipad")
+				}else{
+					html.classList.add("pc")
+				}
+				
+				//作业:window.innerWidth,可以获取窗口的宽度,所以可以根据窗口的宽度,来设定html的样式(lt640,lt960,lt1200,gt640,gt960,gt1200)
+			}
+			lcXys()
+			window.onresize = function(){
+				lcXys()
+			}
+			
+			
+			
+			//console.log(userAgent.indexOf("iPhone"))
+		</script>
+	</body>
+</html>

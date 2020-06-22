@@ -1,0 +1,20 @@
+<xiaozhitiao>
+	<from>玉峰</from>
+	<to>育宁</to>
+	<chats>
+		<chat>
+			<content class="abc" info="玉峰请吃饭">               今晚吃啥？</content>
+			<date>2019.10.29</date>
+		</chat>
+		<chat>
+			<content info="玉峰请吃饭">      今晚吃啥？</content>
+			<date>2019.10.29</date>
+		</chat>
+	</chats>
+	
+	<database>
+		<user>root</user>
+		<password>123456</password>
+	</database>
+</xiaozhitiao>
+

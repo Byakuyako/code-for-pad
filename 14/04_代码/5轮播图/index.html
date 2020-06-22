@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+	</head>
+	<body>
+		<!-- .swiper>((.imgList>.imgItem*5)+(.btnList>.btn*2)) -->
+		<div class="swiper">
+			<div class="imgList">
+				<div class="imgItem active" style="background-image: url(img/img1.webp);"></div>
+				<div class="imgItem" style="background-image: url(img/img2.jpg);"></div>
+				<div class="imgItem" style="background-image: url(img/img3.webp);"></div>
+				<div class="imgItem" style="background-image: url(img/img4.webp);"></div>
+				<div class="imgItem" style="background-image: url(img/img5.webp);"></div>
+			</div>
+			<div class="btnList">
+				<div class="btn pre"><</div>
+				<div class="btn next">></div>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var preBtn = document.querySelector(".swiper .pre")
+			var nextBtn = document.querySelector(".swiper .next")
+			var imgListDivs = document.querySelectorAll(".swiper .imgItem") 
+			var currentImg = 0;
+			
+			console.log(imgListDivs)
+			nextBtn.onclick = function(){
+				currentImg  = currentImg + 1;
+				if(currentImg>=imgListDivs.length){
+					currentImg = 0;
+				}
+				//初始化,将所有的img列表的active去掉
+				imgListDivs.forEach(function(item,i){
+					item.classList.remove("active")
+				})
+				
+				
+				imgListDivs[currentImg].classList.add('active') 
+				
+			}
+			
+			preBtn.onclick = function(){
+				currentImg  = currentImg - 1;
+				if(currentImg<0){
+					currentImg = imgListDivs.length-1;
+				}
+				//初始化,将所有的img列表的active去掉
+				imgListDivs.forEach(function(item,i){
+					item.classList.remove("active")
+				})
+				
+				
+				imgListDivs[currentImg].classList.add('active') 
+				
+			}
+		</script>
+	</body>
+</html>

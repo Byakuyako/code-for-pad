@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = "123"
+			var b = "456"
+			var c;
+			//声明没有赋值的情况下,会默认赋值为undefined
+			//JavaScript在解释执行之前,有预编译的过程,会将变量声明提升到最前面,但是不会将赋值提升.
+			console.log(a)
+			console.log(b)
+			console.log(c)
+			c = 789
+			console.log(d)
+			var d = 7890
+			console.log(d)
+		</script>
+	</body>
+</html>

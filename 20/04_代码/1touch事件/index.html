@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+				width: 100vw;
+				height: 100vh;
+			}
+		</style>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<body>
+		<script type="text/javascript">
+			var body = document.querySelector("body")
+			/* body.ontouchstart = function(event){
+				console.log(event)
+				console.log("触摸开始事件")
+			}
+			
+			body.ontouchmove = function(event){
+				console.log(event)
+				console.log("触摸移动事件")
+			}
+			
+			body.ontouchend = function(event){
+				console.log(event)
+				console.log("触摸结束事件")
+			}
+			
+			body.onclick = function(){
+				console.log(event)
+				console.log("点击事件")
+			} */
+			
+			//1/定义1个自定事件
+			//2设置'swiperLeft'/'swiperRight'/'swiperTop'/'swiperBottom'分别为自定义的向左,向右,向上,向下滑动
+			//3滑动事件中必然包含1个触摸移动事件
+			//body.addEvent('swiperLeft',function(){})
+			
+			
+			//lc.addEvent('自定义事件名称','事件触发时候执行的函数')
+			//lc.emit("自定义事件名称","传入此次触发事件的信息")
+			
+			
+			
+			
+			/* 
+			lc.addEvent(body,'swiperLeft',function(eventMsg){
+				console.log("swiperLeft")
+				console.log(eventMsg)
+			})
+			var fn = function(eventMsg){
+				console.log("swiperRight")
+				console.log(eventMsg)
+			}
+			lc.addEvent('swiperLeft',fn)
+			
+			lc.removeEvent('swiperLeft',fn)
+			
+			lc.emit("swiperLeft","这是向左滑动事件") */
+			
+			lc.init(body);
+			body.addEvent('swiperLeft',function(eventMsg){
+				//console.log("swiperLeft")
+				console.log(eventMsg)
+				body.style.background = 'purple'
+			})
+			
+			body.addEvent('swiperRight',function(eventMsg){
+				//console.log("swiperLeft")
+				console.log(eventMsg)
+				body.style.background = 'deepskyblue'
+			})
+		</script>
+	</body>
+</html>

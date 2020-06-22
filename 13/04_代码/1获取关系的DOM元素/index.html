@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div class="d1">
+			helloworld1
+			<h3>child1</h3>
+			<h3>child2</h3>
+			<h3>child3</h3>
+		</div>
+		<div class="d2">helloworld2</div>
+		<div class="d3">helloworld3</div>
+		<script type="text/javascript">
+			var d1 = document.querySelector('.d1')
+			console.log([d1])
+			//获取元素的父元素parentNode / parentElement
+			//获取子元素 children/childNodes
+			
+			var first =  d1.children[0]
+			//d1.firstElementChild,获取第一个元素
+			var last =  d1.children[d1.children.length-1]
+			//d1.lastElementChild,获取最后1个元素
+			console.log(first)
+			console.log(last)
+			var child2 = document.querySelector('.d1 h3:nth-child(2)')
+			console.log([child2])
+			//获取兄弟元素的下一个元素,nextElementSibling
+			//获取兄弟元素的上一个元素,previousElementSibling
+			
+			
+		</script>
+	</body>
+</html>

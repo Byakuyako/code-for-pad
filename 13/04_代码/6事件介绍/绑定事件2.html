@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#d1{
+				width: 300px;
+				height: 300px;
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+			
+		</div>
+		
+		<button type="button" onclick="changeColor()">点击改变颜色</button>
+		
+		<script type="text/javascript">
+			/* var btn = document.querySelector("button")
+			console.log([btn])
+			//1绑定事件的方式
+			btn.onclick = function(){
+				var d1 = document.querySelector("#d1")
+				if(d1.style.backgroundColor=="pink"){
+					d1.style.backgroundColor = "aqua";
+				}else{
+					d1.style.backgroundColor = "pink";
+				}
+			} */
+			function changeColor(){
+				var d1 = document.querySelector("#d1")
+				if(d1.style.backgroundColor=="orangered"){
+					d1.style.backgroundColor = "aqua";
+				}else{
+					d1.style.backgroundColor = "orangered";
+				}
+			}
+		</script>
+	</body>
+</html>

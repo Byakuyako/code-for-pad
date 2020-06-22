@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log("正常运行的代码")
+			
+			try{
+				throw "这是中间抛出的错误"
+			}catch(e){
+				//TODO handle the exception
+				console.log("这里执行处理错误")
+				console.log([e])
+			}
+			
+			
+			console.log("这是错误后面的代码")
+		</script>
+	</body>
+</html>

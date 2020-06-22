@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script src="js/getAjax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			getAjax('note.xml',function(res){
+				console.log(res)
+				var str = res.responseText;
+				var domParse =  new DOMParser()
+				console.log(domParse)
+				var xmlDom = domParse.parseFromString(str,'text/xml')
+				console.log(xmlDom)
+				var contentDom = xmlDom.querySelector('content')
+				console.log(contentDom.innerHTML)
+				//获取属性
+				console.log(contentDom.getAttribute("info"))
+			})
+		</script>
+	</body>
+</html>

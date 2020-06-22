@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="username" id="username" value="" />
+		<select name="city">
+			<option value="guangzhou">广州</option>
+			<option value="shenzhen">深圳</option>
+			<option value="shanghai">上海</option>
+			<option value="beijing">北京</option>
+		</select>
+		<script type="text/javascript">
+			var inputDom = document.querySelector("#username");
+			//当获取焦点事件
+			inputDom.onfocus = function(e){
+				console.log(e)
+			}
+			//当失去焦点事件
+			inputDom.onblur = function(e){
+				console.log(e)
+			}
+			//输入选项内容的改变
+			var selectDom = document.querySelector("select")
+			selectDom.onchange = function(event){
+				console.log(event)
+			}
+			
+		</script>
+	</body>
+</html>

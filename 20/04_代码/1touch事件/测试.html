@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 100vh;
+			}
+		</style>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<body>
+		<script src="js/swiperEvent.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			lcEvent.init(document.body);
+			
+			var body = document.body;
+			var num = 0;
+			body.addEvent("swiperBottom",function(){
+				num++;
+				console.log(1)
+				var h1 = document.createElement("h1")
+				h1.innerHTML = "下滑刷新内容"+num;
+				body.appendChild(h1)
+			})
+		</script>
+	</body>
+</html>

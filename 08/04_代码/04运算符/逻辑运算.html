@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var man = "男生"
+			var age = 20
+			var result = man=="男生"&&age>=18
+			console.log(result)
+			if(man=="男生"&&age>=18){
+				console.log("可以参军")
+			}else{
+				console.log("条件不满足")
+			}
+			
+			//买包子
+			var man = prompt("请输入您带的东西")
+			if(man=="现金"||man=="手机"){
+				console.log("不能买包子，减肥！")
+			}else{
+				console.log("可以买包子")
+				
+			}
+			
+			
+			var man = "男生"
+			// var brief = null;
+			// man=="男生"&&(brief = "这是1个男生")
+			
+			
+			//三元运算符
+			//条件？为真时候的赋值:为假的时候赋值
+			var brief = man=="男生"?"这是2个男生":null;
+			console.log(brief)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			.d1{
+				width: 25%;
+				height: 200px;
+				background: skyblue;
+			}
+			
+			/*媒体查询*/
+			/*移动端设定*/
+			/*设定小于600像素时候的样式*/
+			@media only screen and (max-width:600px ) {
+				.d1{
+					width: 100%;
+					background: red;
+				}
+			}
+			/*PC端设定*/
+			/*设定大于1200像素的样式*/
+			@media only screen and (min-width: 1200px) {
+				.d1{
+					width: 33%;
+					background: greenyellow;
+				}
+			}
+			/*平板设定*/
+			/*设定600-1200px的样式*/
+			@media only screen and (min-width: 600px) and (max-width: 1200px) {
+				.d1{
+					width: 50%;
+					background: purple;
+				}
+				
+			}
+			/*
+			 1、并不是所有的页面都需要移动端和PC端响应，因为如果页面比较复杂，那么代码就会比较凌乱和比较繁多。而且不能更加针对性的设置PC和移动端页面
+			 2、使用媒体查询，必须加上meta viewport标签。
+			 * 
+			 * */
+		</style>
+	</head>
+	<body>
+		<!--
+			大屏幕PC端的时候，d1占据50%的宽度
+			小屏幕移动端的时候，d1占据100%宽度
+		-->
+		<div class="d1">
+			
+		</div>
+		<!--
+			弹性布局：用于页面的布局
+			meta viewport:设置用于手机端的响应式，width=固定的宽度。
+			@media媒体查询：用于查询屏幕的大小，根据屏幕的大小来设定相关的样式。
+			响应式官网页面：APPLE--->弹性布局，meta viewport, @media
+			移动端页面淘宝：天猫  ---->弹性布局，meta viewport移动端响应
+		-->
+	</body>
+</html>

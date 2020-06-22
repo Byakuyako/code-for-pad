@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var html =  document.children[0]
+			var body =html.children[1]
+			console.log(body)
+			console.log([body])
+			body.innerHTML = '<h1>helloworld</h1>'
+			var h1 = body.children[0]
+			h1.innerHTML = h1.innerHTML +  "<span><a href='http://www.taobao.com'>淘宝</a></span>"
+		</script>
+	</body>
+</html>

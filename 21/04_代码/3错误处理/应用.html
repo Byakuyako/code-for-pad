@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="phone" value="" />
+		<button>拨打电话</button>
+		<script type="text/javascript">
+			var inputDom = document.querySelector("#phone")
+			
+			var btn = document.querySelector("button")
+			
+			btn.onclick = function(){
+				var phoneNumStr = inputDom.value;
+				var phoneNum =  parseInt(phoneNumStr)
+				console.log(phoneNum)
+				console.error("这是提示报错信息，不会影响后面内容的执行")
+				try{
+					if(isNaN(phoneNum)){
+						var error = new Error("这个电话号码格式有问题，电话号码的错误！")
+						error.type = "geshi_problem"
+						throw error
+						console.log("这里的代码，永远不会执行")
+					}else if(phoneNumStr.length!=11){
+						var error = new Error("电话号码长度有问题，应该是11位的数字")
+						error.type = "numLength_problem"
+						throw error
+						console.log("这里的代码，永远不会执行")
+					}
+				}catch(e){
+					//TODO handle the exception
+					console.log([e])
+					if(e.type=='numLength_problem'){
+						var h1 = document.createElement("h1");
+						h1.innerHTML = "请正确输入11位的电话号码！"
+						document.body.appendChild(h1)
+					}else if(e.type=='geshi_problem'){
+						var h1 = document.createElement("h1");
+						h1.innerHTML = "请确保输入的电话号码是数字"
+						document.body.appendChild(h1)
+					}
+					
+				}
+				
+				console.log("执行拨打电话！")
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

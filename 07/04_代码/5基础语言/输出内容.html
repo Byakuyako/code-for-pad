@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 1弹框
+			//alert("尽量少用原生的弹框")
+			// 2控制台输出
+			var a = "今晚吃啥？"
+			console.log(a)
+			console.error("减肥！不能吃东西！")
+			console.warn("警告！这是减肥阶段！")
+			//3弹框,带有确定和取消按钮的弹框(尽量少用原生的弹框)
+			var b =  confirm("蔡徐坤是不是你的爱豆？")//true/false
+			console.log(b)//true
+			if(b==true){
+				//跳转至百度百科页面
+				location.href = "https://baike.baidu.com/item/%E8%94%A1%E5%BE%90%E5%9D%A4/8511458?fr=aladdin"
+			}else{
+				//页面输出欢迎进入我们网站
+				document.write("欢迎进入我们网站");
+			}
+			//4弹框,带输入框的弹框(尽量少用原生的弹框)
+			var c = prompt("你女朋友是哪里人？")
+			document.write("<h1>我女朋友是："+c+"</h1>")
+			
+			
+			
+			//作业:
+			//弹2个弹框，将第一个弹框的值与第二个弹框的值相加。将结果输出到页面。做一个加法的计算器
+			
+		</script>
+	</body>
+</html>

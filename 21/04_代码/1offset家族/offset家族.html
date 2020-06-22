@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8">
+	<title>瓜娃子</title>
+	<style>
+		#d1 {
+			width: 200px;
+			height: 200px;
+			color: skyblue;
+			border: 40px solid purple;
+			padding: 20px;
+			margin: 100px;
+		}
+		
+		body {
+			border: 20px solid pink;
+			padding: 40px;
+			position: relative;
+		}
+		
+		#d2 {
+			width: 500px;
+			height: 500px;
+			border: 20px solid orange;
+			padding: 20px;
+			/* position: relative; */
+		}
+	</style>
+</head>
+<body>
+	<div id="d2">
+		<div id="d1" style="left: 100px;">helloWorld</div>
+	</div>
+	<script>
+		var d1 = document.querySelector('#d1');
+		//如果父级没有定位 则以到浏览器的距离为准
+		//如果父级有定位,则为元素d1border外的距离到他父元素border外边的距离
+		console.log(d1.offsetLeft);
+		console.log(d1.offsetTop);
+		
+		//offsetWidth = content +padding +border
+		//offsetHeight = content +padding +border
+		console.log(d1.offsetWidth);
+		console.log(d1.offsetHeight);
+	</script>
+</body>
+</html>

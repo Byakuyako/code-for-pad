@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1/构造函数创建对象方式
+			/* var student = new Object()
+			student.name = "小明";
+			student.like = "唱跳rap篮球"
+			student.draw = function(){
+				console.log(this.name + "会画画")
+			}
+			console.log(student) */
+			//2字面量的方式创建对象
+			/* var teacher  = {}//创建没有属性和方法的对象
+			teacher.name = "老王";
+			teacher.age = 18;
+			teacher.teach = function(){
+				console.log(this.name+"教书育人")
+			}
+			console.log(teacher) */
+			
+			var teacher = {
+				name:"老李",
+				age:35,
+				sing:function(){
+					console.log(this.name + "会唱歌")
+				}
+				
+			}
+		</script>
+	</body>
+</html>

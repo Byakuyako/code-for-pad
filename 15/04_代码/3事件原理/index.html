@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		 lcEvent.addEvent('事件名称',事件执行函数)
+		 //自定义事件
+		 lcEvent.addEvent('addBuyCar',fn1)//发送用户消息，添加购物车成功
+		 lcEvent.addEvent('addBuyCar',fn2)//购物车栏目里，都商品数量加1
+		 lcEvent.addEvent('addBuyCar',fn3)//往后台发送购物车添加了新数量
+		 
+		 //自定义触发
+		 lcEvent.emit('addBuyCar')//触发购物车事件，事件里的所有函数在此时执行
+		 
+		 -->
+		 <button type="button">按钮</button>
+		 
+		 <script type="text/javascript">
+		 	var lcEvent = {
+				event:{
+					//"addBuyCar":[fn1,fn2,fn3]
+					"青年杂志2019发布":[
+						function(){
+							console.log("购买青年杂志")
+						},
+						function(){
+							console.log("批发青年杂志")
+						}
+					]
+				},
+				addEvent:function(eventName,fn){
+					if(this.event[eventName]==undefined){
+						this.event[eventName] = [];
+					}
+					this.event[eventName].push(fn)
+				},
+				emit:function(eventName,eventMsg){
+					var fnList = this.event[eventName]
+					fnList.forEach(function(item,i){
+						item(eventMsg)
+					})
+				},
+				removeEvent:function(eventName,fn){
+					var fnList = this.event[eventName]
+					var that = this
+					fnList.forEach(function(item,i){
+						if(fn==item){
+							//console.log(this)
+							that.event[eventName].splice(i,1);
+						}
+					})
+				}
+			}
+			//设计模式:观察者模式/订阅者模式/事件模式
+			var abc = function(event){
+				console.log(event)
+				console.log("购买周杰伦的演唱会门票")
+			}
+			lcEvent.addEvent("周杰伦演唱会",abc)
+			lcEvent.addEvent("周杰伦演唱会",function(event){
+				console.log("取演唱会门口倒卖周杰伦门票")
+			})
+			lcEvent.addEvent("周杰伦演唱会",function(event){
+				console.log("练习演唱会当天的舞蹈")
+			})
+			
+			lcEvent.removeEvent("周杰伦演唱会",abc)
+			lcEvent.emit("周杰伦演唱会",{title:"2019香港巡回演唱会",author:"周杰伦",price:"2888"})
+			
+			//原生事件的原理,底层代码是怎么写出来的
+			//了解订阅者模式
+			//订阅者模式,当我们希望能够定制自定义的事件,通过触发自定义事件,达到将这一系列事先定义好的函数,被调用执行.
+			
+			
+			//用户A
+			lcEvent.addEvent("青年杂志2019发布",function(){
+				console.log("购买青年杂志")
+			})
+			//用户b
+			lcEvent.addEvent("青年杂志2019发布",function(){
+				console.log("批发青年杂志")
+			})
+			lcEvent.emit("青年杂志2019发布")
+			
+			var btn = document.querySelector("button")
+			
+			lcEvent.addEvent("click",function(){
+				document.body.style.background="pink"
+			})
+			
+			btn.onclick = function(){
+				lcEvent.emit("click")
+			}
+			
+			
+			
+			
+		 </script>
+		 <script src="js/user2.js" type="text/javascript" charset="utf-8"></script>
+		 <script src="js/user3.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

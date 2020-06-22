@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+				border: 20px solid deeppink;
+				position: relative;
+				padding: 40px;
+			}
+			#d1{
+				width: 200px;
+				height: 200px;
+				color: skyblue;
+				border: 40px solid purple;
+				padding: 20px;
+				margin: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+		 style="left: 300px;"
+		 -->
+		<div id="d1" style="left: 300px;" >
+			helloworld
+		</div>
+		<script type="text/javascript">
+			var d1 = document.querySelector("#d1")
+			console.log([d1])
+			console.log(d1.offsetWidth)
+			console.log(d1.offsetHeight)
+			
+			console.log(d1.offsetLeft)
+			d1.offsetLeft = 500
+			console.log(d1.offsetLeft)
+			//console.log(d1.style.left)
+			//offsetHeight = content + padding + border
+			//offsetWidth= content + padding + border 
+		</script>
+	</body>
+</html>

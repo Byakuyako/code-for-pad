@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function abc(){
+				console.log('123')
+			}
+			
+			try{
+				cba()
+			}catch(e){
+				//TODO handle the exception
+				console.log([e])
+				console.log(e.message)
+				console.log(e.stack)
+			}finally{
+				console.log("不管是否有错都会运行这里的代码")
+			}
+			console.log("cba函数后的内容")
+		</script>
+	</body>
+</html>

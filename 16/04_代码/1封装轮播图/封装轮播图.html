@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.css"/>
+		<style type="text/css">
+			.swiper1{
+				width: 600px;
+				height: 400px;
+				margin:  0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper swiper1"></div>
+		<div class="swiper swiper2"></div>
+		<div class="swiper swiper3"></div>
+		<script src="js/LcSwiper.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var imgList = ["img/img1.webp","img/img2.jpg","img/img3.webp","img/img4.webp","img/img5.webp"]
+			var swiper1 =new LcSwiper(".swiper1",imgList)//构造对象的函数/工厂模式/
+			//swiper1.go(1) // 输入1,就会切换到索引为1的图片
+			//swiper1.go(2) // 输入2,就会切换到索引为2的图片
+			
+			var swiper2 = new LcSwiper(".swiper2",imgList)
+			//swiper2.go(1) // 输入1,就会切换到索引为1的图片
+			//swiper2.go(2)
+			
+			var swiper3 = new LcSwiper(".swiper3",imgList)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var abc = {
+				id: '9CaKrnQhX56',
+				type: 2,  // 文章类型
+				category: '国际新闻', // 频道
+				searchKey: '中美贸易',// 搜索关键字
+				keywords: '',
+				isPure: 0, // 判断是否是纯文章A页 0显示 1不显示
+				aPage: true // a 页声明
+			}
+			
+			console.log(abc)
+			
+			for(var item in abc){
+				//console.log(item)
+				//console.log(abc[item])
+				document.write("<h1>key:"+item+";value:"+abc[item]+"</h1>")
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#d1{
+				width: 200px;
+				height: 200px;
+				background: pink;
+				
+				/* 动画 
+				animation:综合性的动画设置属性
+				animation-name:动画名称
+				animation-duration:动画的时间周期
+				animation-timing-function:动画变化的速度，默认ease，linear,ease-in,ease-out,亦可是设置贝塞尔曲线
+				animation-delay:延迟时间
+				animation-iteration-count:动画循环次数,infinite无限循环
+				animation-direction:运动的方向,normal默认值，alternate奇数次正常运动，偶数次反方向运动，reverse,反方向运动，alternate-reverse奇数次反方向偶数次正方向运动
+				animation-fill-mode: forwards;使得动画保留最后一帧的效果
+				*/
+				/* animation:donghua1 3s; */
+				
+				animation-name: donghua1;
+				animation-duration: 3s;
+				animation-timing-function: linear;
+				/* animation-delay: 2s; */
+				animation-iteration-count: 1;
+				animation-direction: normal;
+				animation-fill-mode: forwards;
+			}
+			
+			@keyframes donghua1{
+				/* from{} 等同于0%{}*/
+				0%{
+					transform: translate(0,0);
+				}
+				33.3%{
+					transform: translate(500px,0);
+				}
+				/* to{}等同于100%{} */
+				100%{
+					transform: translate(500px,400px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+			
+		</div>
+	</body>
+</html>

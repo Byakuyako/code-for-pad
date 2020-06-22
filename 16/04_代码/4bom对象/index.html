@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#abc{
+				height: 10000px;
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="http://www.baidu.com" target="_blank">百度</a>
+		<a href="#abc">内部锚点跳转</a>
+		<button>打开淘宝</button>
+		
+		<button class="btn1">跳转至腾讯</button>
+		<div id="abc">
+			abc的内容
+		</div>
+		<script type="text/javascript">
+			var btn = document.querySelector("button");
+			btn.onclick = function(){
+				var json = {
+					"name": "helloworld",
+					"fullscreen": "no",
+					"location": "no",
+					"width": "600px",
+					"height": "400px",
+					"top": "100px",
+					"left": "100px"
+				};
+				page = window.open("http://www.taobao.com","_blank",json)
+				console.log(page)
+			}
+			
+			var btn1 = document.querySelector(".btn1")
+			btn1.onclick = function(){
+				location.href = "http://www.4399.com"//修改href属性也可以跳转页面
+				//location.assign("http://www.qq.com")
+				//替换是将当前页面替换掉,不能用回退按钮进行回退
+				//location.replace("http://www.qq.com")
+				//重新加载当前页面,相当于点击了刷新按钮
+				//location.reload()
+			}
+		</script>
+	</body>
+</html>

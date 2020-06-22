@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* function abc(){
+				var a = "123"
+				var b = "456"
+				return a + b;
+			} */
+			
+			//a -> 身高, b -> 体重
+			//不同的人种,对身材的敏感程度是不一样
+			
+			function abc(a,b){
+				var height = a;
+				var weight = b;
+				var fn = function(manType){
+					console.log("体重："+weight)
+					console.log("身高:"+height)
+					switch(manType){
+						case "亚洲人":
+							var result = weight/(height*height)
+							if(result>28){
+								console.log("肥胖")
+							}else{
+								console.log("偏瘦")
+							}
+							break;
+						case "非洲人":
+							var result = weight/(height*height)
+							if(result>40){
+								console.log("肥胖")
+							}else{
+								console.log("偏瘦")
+							}
+							break;
+						case "欧洲人":
+							var result = weight/(height*height)
+							if(result>35){
+								console.log("肥胖")
+							}else{
+								console.log("偏瘦")
+							}
+							
+							
+					}
+				}
+				return fn
+			}
+			
+			
+		</script>
+	</body>
+</html>

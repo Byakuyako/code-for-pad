@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var student = {
+				name:"小明",
+				school:"sxt"
+			}
+			//1创建数组第一种方式:字面量方式
+			var city = []//["深圳","广州","北京","上海"]
+			console.log(city)
+			//2创建数组第二种方式:构造函数方式
+			var city1 = new Array("深圳","广州","天津","乌鲁木齐")
+			console.log(city1)
+			// 数组可以存放任意的数据,没有类型限制,也没有长度限制
+			var arr = ["字符串",123,undefined,null,true,{name:"学生",age:16},[1,2,3,4,5]]
+			console.log(arr)
+			//数据的存取,是通过索引值进行存取
+			var str = arr[0]
+			console.log(arr[0])
+			
+			arr[1] = 789;
+			console.log(arr)
+			
+			arr[100] = 100;
+			console.log(arr)
+			
+			
+		</script>
+	</body>
+</html>

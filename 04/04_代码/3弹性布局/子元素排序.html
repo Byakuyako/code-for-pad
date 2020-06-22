@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.parent{
+				width: 900px;
+				height: 600px;
+				border: 1px solid #ccc;
+				display: flex;
+			}
+			.child{
+				width: 200px;
+				height: 200px;
+			}
+			/* 
+			 子元素排序order
+			 设置在子元素上，按照从小到大的顺序进行排序
+			 */
+			.c1{
+				background: #87CEEB;
+				order: 4;
+			}
+			.c2{
+				background: #CCCCCC;
+				order: 2;
+			}
+			.c3{
+				background: #DA70D6;
+				order: 3;
+			}
+			.c4{
+				background: #FFA500;
+				order: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="child c1">1</div>
+			<div class="child c2">2</div>
+			<div class="child c3">3</div>
+			<div class="child c4">4</div>
+		</div>
+	</body>
+</html>

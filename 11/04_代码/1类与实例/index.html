@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+			// 完整构造函数创建对象的方式
+			//1/创建构造函数
+			//2/创建原型对象
+			//3/设置构造函数原型对象属性protoType
+			function Teacher(name,age,likename){
+				this.name = name;
+				this.age = age;
+				this.likename = likename
+				//this.like = tlike
+				//console.log(this)
+			}
+			//将这一类型都需要用到的方法进行封装,封装到一个对象上,并且将这个对象给到构造函数的prototype属性
+			var teacherProto = {
+				like:function(){
+					console.log(this.name+"喜欢"+this.likename)
+				},
+				teach:function(){
+					console.log("教好学生")
+				}
+			}
+			Teacher.prototype = teacherProto
+			
+			//new 创建1个新的对象,将函数内部的this指向新的对象
+			var t1 = new Teacher("小黑","60","看电影")
+			// console.log(t1.name)
+			// console.log(t1.age)
+			// console.log(t1.like)
+			var t2 = new Teacher("老王","80","烧烤")
+			console.log(t1)
+			console.log(t2)
+			
+			
+			//第四种方式,class=> es6 新出的规范，允许使用class创建对象
+			class Cat{
+				//定义构造函数
+				constructor(name,color,likename) {
+				    this.name = name;
+					this.color = color;
+					/* this.like = function(){
+						console.log(this.color+"的"+this.name+"喜欢"+likename)
+					} */
+				}
+				
+				like(){
+					console.log(this.color+"的"+this.name+"喜欢"+likename)
+				}
+				
+			}
+			
+			var c1 = new Cat("波斯猫","白色","毛球")
+			var c2 = new Cat("小猫","蓝色","喵喵")
+			console.log(c1)
+			console.log(c2)
+			
+			
+			console.log(c1 instanceof Cat)
+			console.log(t1 instanceof Teacher)
+		</script>
+	</body>
+</html>
